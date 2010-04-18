@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.6) 
 project(luacronkite C)
 
-set(BUILD_VERSION "0.5.1")
+set(BUILD_VERSION "0.6")
 set(PROJECT_VERSION ${BUILD_VERSION})
 
 set(CFP "-std=c99 -Wall -pipe")
