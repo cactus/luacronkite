@@ -9,8 +9,8 @@ Requirements
 
 Build requirements:
 
-- cmake
 - gcc
+- cmake
 - libcronkite
 - lua (or luajit)
 
