@@ -55,7 +55,7 @@ static int ck_setopt(lua_State *L) {
     }
 
     const char *opt = luaL_checkstring(L, 1);
-    const char *val = luaL_checkstring(L, 1);
+    const char *val = luaL_checkstring(L, 2);
 
     if (strcmp(opt, "AURURL") == 0) {
         cronkite_setopt(CK_OPT_AURURL, val);
