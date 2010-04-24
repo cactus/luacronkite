@@ -52,3 +52,19 @@ target_link_libraries(luacronkite ${LUA_LIBRARIES} cronkite)
 set_target_properties(luacronkite PROPERTIES
     OUTPUT_NAME luacronkite PREFIX "" SUFFIX ".so")
 
+set(TESTSDIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")
+add_test(t-nourl lua ${TESTSDIR}/nourl.lua)
+set_tests_properties(t-nourl PROPERTIES
+    PASS_REGULAR_EXPRESSION "URL using bad/illegal format or missing URL")
+    
+add_test(t-badurl lua ${TESTSDIR}/badurl.lua)
+set_tests_properties(t-badurl PROPERTIES
+    PASS_REGULAR_EXPRESSION "Couldn't resolve host name")
+    
+add_test(t-emptyjson lua ${TESTSDIR}/emptyjson.lua ${TESTSDIR}/emptyjson.lua)
+set_tests_properties(t-emptyjson PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error parsing JSON result")
+    
+add_test(t-localfilequery lua ${TESTSDIR}/localfilequery.lua ${TESTSDIR}/example.json)
+set_tests_properties(t-localfilequery PROPERTIES
+    PASS_REGULAR_EXPRESSION "example")
