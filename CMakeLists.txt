@@ -59,7 +59,7 @@ set_tests_properties(t-nourl PROPERTIES
     
 add_test(t-badurl lua ${TESTSDIR}/badurl.lua)
 set_tests_properties(t-badurl PROPERTIES
-    PASS_REGULAR_EXPRESSION "Couldn't resolve host name")
+    PASS_REGULAR_EXPRESSION "[Cc]ouldn't resolve host name")
     
 add_test(t-emptyjson lua ${TESTSDIR}/emptyjson.lua ${TESTSDIR}/emptyjson.lua)
 set_tests_properties(t-emptyjson PROPERTIES
